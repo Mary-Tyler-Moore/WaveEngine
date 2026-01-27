@@ -1,7 +1,9 @@
 # WaveEngine
 
-A small, deliberately scoped 2D engine built in C++17 using SDL2.
+A small, deliberately scoped 2D engine built in C++17 using SDL2.  
 Each phase introduces one core engine system in isolation.
+
+---
 
 ## Phases
 
@@ -12,8 +14,7 @@ Each phase introduces one core engine system in isolation.
 - Minimal render loop
 - Texture loading from shared `assets/`
 
-▶ See: [projects/phase_00_engine_bootstrap/README.md](projects/phase_01_tilemap_rendering/README.md)
-
+▶ See: [projects/phase_00_engine_bootstrap/README.md](projects/phase_00_engine_bootstrap/README.md)
 
 ![Phase 00 Screenshot](assets/screenshots/phase_00_engine_bootstrap.png)
 
@@ -25,10 +26,25 @@ Each phase introduces one core engine system in isolation.
 - Load a Tiled JSON map from disk (`assets/tiles/ww-16k.json`)
 - Decode base64 + zlib tile layers
 - Render a 32×32 atlas (`assets/tiles/16k-waves-trans-atlas.png`) using SDL2
+- Validate world-scale rendering against a known working GDevelop project
 
 ▶ See: [projects/phase_01_tilemap_rendering/README.md](projects/phase_01_tilemap_rendering/README.md)
 
-![Phase 00 Screenshot](assets/screenshots/phase_01_tilemap_rendering.png)
+![Phase 01 Screenshot](assets/screenshots/phase_01_tilemap_rendering.png)
 
+---
+
+### Phase 02 — Player Movement
+**Goal:** Introduce a controllable player entity using simple, deterministic movement.
+
+- Render a player boat sprite (`assets/boat-64.png`) on top of the tilemap
+- Frame-rate–independent movement using `std::chrono`
+- WSAD keyboard controls with normalized diagonal movement
+- Shared world → screen transform with the tilemap
+- No acceleration or physics yet (intentionally deferred)
+
+▶ See: [projects/phase_02_player_movement/README.md](projects/phase_02_player_movement/README.md)
+
+![Phase 02 Screenshot](assets/screenshots/phase_02_player_movement.png)
 
 ---
