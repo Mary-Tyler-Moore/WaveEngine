@@ -48,3 +48,20 @@ Each phase introduces one core engine system in isolation.
 ![Phase 02 Screenshot](assets/screenshots/phase_02_player_movement.png)
 
 ---
+
+### Phase 03 — Camera Follow
+**Goal:** Introduce a smooth, player-centric camera system with inertial movement.
+
+- Camera follows the player boat with configurable smoothing
+- Exponential interpolation (lerp) for natural camera inertia
+- Optional follow toggle for debugging and comparison
+- Camera deadzone to delay movement until the player drifts from center
+- Frame-rate–independent camera updates
+- FPS counter added to establish a performance baseline before chunking
+- Uses the full island tilemap (`ww-16k-all-islands.json`) to stress test rendering
+
+▶ See: [projects/phase_03_camera_follow/README.md](projects/phase_03_camera_follow/README.md)
+
+![Phase 03 Screenshot](assets/screenshots/phase_03_camera_follow.png)
+
+---
