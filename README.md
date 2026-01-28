@@ -98,3 +98,16 @@ CSV output: `assets/profiles/phase_04_level_streaming.csv`
 ![Phase 04 Screenshot](assets/screenshots/phase_04_level_streaming.png)
 
 ---
+
+### Phase 05 — Collision Detection
+**Goal:** Prove shoreline collision masks derived from island chunks.
+
+- Build collision masks from `shore` tiles in island chunk maps
+- Per-frame boat collision query (read-only; no response yet)
+- Debug overlay to visualize collision cells aligned to the world
+
+▶ See: [projects/phase_05_collision_detection/README.md](projects/phase_05_collision_detection/README.md)
+
+![Phase 05 Screenshot](assets/screenshots/phase_05_collision_detection.png)
+
+---
