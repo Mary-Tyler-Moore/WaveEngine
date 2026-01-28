@@ -26,7 +26,6 @@ Each phase introduces one core engine system in isolation.
 - Load a Tiled JSON map from disk (`assets/tiles/ww-16k.json`)
 - Decode base64 + zlib tile layers
 - Render a 32×32 atlas (`assets/tiles/16k-waves-trans-atlas.png`) using SDL2
-- Validate world-scale rendering against a known working GDevelop project
 
 ▶ See: [projects/phase_01_tilemap_rendering/README.md](projects/phase_01_tilemap_rendering/README.md)
 
@@ -77,6 +76,8 @@ Each phase introduces one core engine system in isolation.
 * Ocean rendered as a constant background to avoid empty-chunk overhead
 * Visual chunk bounds overlay for validation and debugging
 * Runtime toggles for culling, streaming radius, and debug visualization
+* Chunk files live in `assets/tiles/chunk_non_empty` and encode world origin in filenames
+  (e.g. `island_chunk_0_0_-8000_-8000`)
 
 **Performance & Instrumentation**
 
@@ -89,6 +90,8 @@ Each phase introduces one core engine system in isolation.
   * Active vs loaded chunk counts
   * Chunk load events and radius changes
 * Screenshot capture embeds runtime stats directly into the image for documentation
+
+CSV output: `assets/profiles/phase_04_level_streaming.csv`
 
 ▶ See: [projects/phase_04_level_streaming/README.md](projects/phase_04_level_streaming/README.md)
 
