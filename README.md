@@ -65,3 +65,33 @@ Each phase introduces one core engine system in isolation.
 ![Phase 03 Screenshot](assets/screenshots/phase_03_camera_follow.png)
 
 ---
+
+### Phase 04 — Level Streaming
+
+**Goal:** Prove scalable world rendering through chunk-based visibility, ordering, and measurement.
+
+* World partitioned into logical chunks derived from precomputed island data (`chunk_non_empty`)
+* Active chunk selection driven by camera position and configurable radius
+* Deterministic render order: water background → island chunks → player
+* On-demand chunk loading with an in-memory cache (no eviction yet; intentionally simple)
+* Ocean rendered as a constant background to avoid empty-chunk overhead
+* Visual chunk bounds overlay for validation and debugging
+* Runtime toggles for culling, streaming radius, and debug visualization
+
+**Performance & Instrumentation**
+
+* Frame timing and FPS measurement integrated into the main loop
+* Live stats surfaced in the window title (active chunks, loaded chunks, tiles/frame)
+* CSV telemetry logging with timestamps:
+
+  * Player world position
+  * FPS and frame time
+  * Active vs loaded chunk counts
+  * Chunk load events and radius changes
+* Screenshot capture embeds runtime stats directly into the image for documentation
+
+▶ See: [projects/phase_04_level_streaming/README.md](projects/phase_04_level_streaming/README.md)
+
+![Phase 04 Screenshot](assets/screenshots/phase_04_level_streaming.png)
+
+---
