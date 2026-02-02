@@ -1,11 +1,13 @@
 # WaveEngine
 
-A small, deliberately scoped 2D engine built in C++17 using SDL2.  
-Each phase introduces one core engine system in isolation.
+This project is a custom 2D game engine written in C++ 17, using SDL2 for cross-platform windowing, input, and system abstraction.
 
 ---
 
 ## Phases
+
+The phases are intentionally ordered to mirror how a real engine is grown in practice: each system is introduced only after the assumptions it depends on are stable and observable. Early phases prioritize determinism, visibility, and instrumentation over abstraction. Rendering, movement, camera behavior, streaming, and collision are all proven independently before any higher-level entity or gameplay architecture is layered on top. This allows each phase to serve as both a learning artifact and a reusable reference implementation, while keeping performance characteristics and failure modes easy to reason about. Later phases will focus on integrating these proven systems into cohesive gameplay, improving “game feel,” and introducing editor tooling and lightweight ECS patterns without retrofitting foundational decisions.
+
 
 ### Phase 00 — Engine Bootstrap
 **Goal:** Validate the foundation: window, renderer, asset loading.
